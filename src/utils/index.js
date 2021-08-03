@@ -53,7 +53,7 @@ export const updateUserDetails = async (e,email, username, pass, user, setUser )
     }
 };
 
-export const deleteUser = async (user) => {
+export const deleteUser = async (user, setUser) => {
         console.log(user);
     try {
         let response;
@@ -65,9 +65,10 @@ export const deleteUser = async (user) => {
             })
     }
     await response.json();
+    setUser()
     } catch (error) {
         console.log(error);
     }
-}
+};
    
 

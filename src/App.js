@@ -22,7 +22,7 @@ const App = () => {
         <Home />
       </Route>
       <Route path='/profile'>
-        <Profile user={user} setUser={setUser}/>
+        <Profile user={user} setUser={setUser} />
       </Route>
     </AppContainer>
   )
