@@ -1,7 +1,7 @@
-import { PageContainer } from "../../../styledComponents";
+import { PageContainer } from "../../styledComponents";
 import React, {useState} from 'react';
 import styled from "styled-components";
-import { fetchUsers } from "../../../utils";
+import { fetchUsers } from "../../utils";
 import { Redirect } from "react-router-dom";
 
 export const Landing = ({ user, setUser }) => {

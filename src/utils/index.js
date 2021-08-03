@@ -29,6 +29,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
     }
 };
 
+
 export const updateUserDetails = async (e,email, username, pass, user, setUser ) => {
     e.preventDefault();
 
@@ -72,6 +73,20 @@ export const deleteUser = async (user, setUser) => {
 };
    
 
+
+//list all movies
+export const findAllMovies = async (setMovies) => {
+
+ let response;
+    try {
+       response = await fetch(`${process.env.REACT_APP_REST_API}moviesAll`)
+    const data = await response.json();
+    setMovies(data);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 //Movie Update
 export const updateMovie = async (e, watched, rating, setMovie) => {
     e.preventDefault();
@@ -97,3 +112,4 @@ export const updateMovie = async (e, watched, rating, setMovie) => {
 
 
     
+
