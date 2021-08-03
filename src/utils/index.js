@@ -101,7 +101,7 @@ export const updateMovie = async (e, watched, rating, setMovie) => {
                 })
             })
 
-            }
+        }
     const data = await response.json();
     setMovie(data.movies.watched)    
     } catch (error) {

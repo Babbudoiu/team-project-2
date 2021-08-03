@@ -7,6 +7,7 @@ import {
   import { Landing } from './pages/landing'
   import { Home } from './pages/home'
   import { Profile } from './pages/profile'
+  import { Movies } from './pages/movies';
   
 
 const App = () => {
@@ -21,6 +22,9 @@ const App = () => {
       </Route>
       <Route path='/home'>
         <Home movies={movies} setMovies={setMovies} />
+      </Route>
+      <Route path='/movies'>
+        <Movies />
       </Route>
       <Route path='/profile'>
         <Profile user={user} setUser={setUser} />
