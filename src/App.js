@@ -4,13 +4,14 @@ import {
   Route,
   Redirect } from 'react-router-dom';
   import styled from 'styled-components';
-  import { Landing } from './pages/home/landing'
+  import { Landing } from './pages/landing'
   import { Home } from './pages/home'
   import { Profile } from './pages/profile'
   
 
 const App = () => {
   const [user, setUser] = useState();
+  const [movies, setMovies] = useState([]);
 
   return (
     <AppContainer>
@@ -19,7 +20,7 @@ const App = () => {
         <Landing user={user} setUser={setUser} />
       </Route>
       <Route path='/home'>
-        <Home />
+        <Home movies={movies} setMovies={setMovies} />
       </Route>
       <Route path='/profile'>
         <Profile user={user} setUser={setUser}/>
