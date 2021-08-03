@@ -23,7 +23,7 @@ const App = () => {
         <Home movies={movies} setMovies={setMovies} />
       </Route>
       <Route path='/profile'>
-        <Profile user={user} setUser={setUser}/>
+        <Profile user={user} setUser={setUser} />
       </Route>
     </AppContainer>
   )

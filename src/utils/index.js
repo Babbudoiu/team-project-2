@@ -13,19 +13,24 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
                 })
             })
         } else {
-            response = await fetch(`${process.env.REACT_APP_REST_API}users/${username}`)
+            response = await fetch(`${process.env.REACT_APP_REST_API}users/${username}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    password: pass
+                })
+            })
         }
         const data = await response.json();
+        console.log(data)
         setUser(data.user.username)
-    
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 };
 
 
-
-export const updateUserDetails = async (e,email, username, pass, setUser ) => {
+export const updateUserDetails = async (e,email, username, pass, user, setUser ) => {
     e.preventDefault();
 
     try {
@@ -37,11 +42,10 @@ export const updateUserDetails = async (e,email, username, pass, setUser ) => {
                 body: JSON.stringify({
                     email: email,
                     username: username,
-                    password: pass
+                    password: pass,
+                    currentUser: user
                 })
-        })
-    } else {
-        response = await fetch(`${process.env.REACT_APP_REST_API}users/${username}`)
+            })
     }
     const data = await response.json();
     setUser(data.user.username)
@@ -49,7 +53,26 @@ export const updateUserDetails = async (e,email, username, pass, setUser ) => {
         console.log(error);
     }
 };
+
+
+export const deleteUser = async (user, setUser) => {
+    try {
+        let response;
+        if (user) {
+            response = await fetch(`${process.env.REACT_APP_REST_API}users/${user}`, {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+                username: user,
+            })
+    }
+    await response.json();
+    setUser()
+    } catch (error) {
+        console.log(error);
+    }
+};
    
+
 
 //list all movies
 export const findAllMovies = async (setMovies) => {
@@ -63,3 +86,29 @@ export const findAllMovies = async (setMovies) => {
         console.log(error);
     }
 };
+
+//Movie Update
+export const updateMovie = async (e, watched, rating) => {
+    e.preventDefault();
+    try {
+        let response;
+        if (watched){ 
+            response = await fetch(`${process.env.REACT_APP_REST_API}movies`),{
+                method: 'PUT',
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify({
+                    watched: watched,
+                    ratings: rating
+                })
+
+            }
+            
+
+        }
+    const data = await response.json();
+    setMovie(data.movies.watched)    
+    } catch (error) {
+        console.log(error);
+    }
+};
+

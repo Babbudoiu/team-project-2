@@ -2,6 +2,7 @@ import { PageContainer } from "../../styledComponents"
 import Navbar from '../../components/navbar';
 import { useState } from 'react';
 import { updateUserDetails } from "../../utils";
+import { deleteUser } from "../../utils";
 
 export const Profile = ({ user, setUser}) => {
     const [email, setEmail] = useState();
@@ -12,7 +13,8 @@ export const Profile = ({ user, setUser}) => {
         <PageContainer>
             <Navbar />
             <h1>User settings</h1>
-            <form onSubmit={(e) => updateUserDetails(e, email, username, pass, setUser)}>
+            <p>Please enter new username, email or password but all entries MUST be filled</p>
+            <form onSubmit={(e) => updateUserDetails(e, email, username, pass, user, setUser)}>
             <label>
             Change username:
             <input 
@@ -36,7 +38,12 @@ export const Profile = ({ user, setUser}) => {
             </label>
             <button type="submit" >Update</button>
             </form>
-           
-        </PageContainer>
+
+            <h2>Delete Account</h2>
+            <button type="submit"onClick={() => {
+                deleteUser(user,setUser)
+            }}>Delete Account</button>
+            
+           </PageContainer>
     )
 };
