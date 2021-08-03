@@ -1,7 +1,6 @@
 import { MovieBox } from '../movieBox';
 import React from 'react';
 
-
 export const MovieCard = ({moviesList}) => {
 
  return (
@@ -13,3 +12,4 @@ export const MovieCard = ({moviesList}) => {
       </div>
  );
 };
+

@@ -12,6 +12,10 @@ export const Landing = ({ user, setUser }) => {
 
     return(
         <PageContainer>
+            <Header>
+                <h2 >Welcome</h2>
+                <h4>Please Log in or Sign up</h4>
+            </Header>
             <LogForm onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
                 {newUser &&<LogInput onChange={(e) =>setEmail(e.target.value)} placeholder='Email' />}
                 <LogInput onChange={(e) =>setUsername(e.target.value)} placeholder='Username' />
@@ -24,12 +28,21 @@ export const Landing = ({ user, setUser }) => {
     )
 }
 
+const Header = styled.div`
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: white;
+    border-bottom: 2px solid #201e45;
+`
+
 const LogInput = styled.input`
     width: 20vw;
 `
 
 const LogForm = styled.form`
     width: 35vw;
+    align-content: center;
+    margin: auto;
 `
 
 const LogButton = styled.button`

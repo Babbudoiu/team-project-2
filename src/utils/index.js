@@ -22,7 +22,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
             })
         }
         const data = await response.json();
-        console.log(data)
+        console.log(data.user)
         setUser(data.user.username)
     } catch (error) {
         console.log(error)
@@ -76,7 +76,6 @@ export const deleteUser = async (user, setUser) => {
 
 //list all movies
 export const findAllMovies = async (setMovies) => {
-
  let response;
     try {
        response = await fetch(`${process.env.REACT_APP_REST_API}moviesAll`)
