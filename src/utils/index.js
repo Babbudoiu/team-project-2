@@ -53,8 +53,8 @@ export const updateUserDetails = async (e,email, username, pass, user, setUser )
     }
 };
 
+
 export const deleteUser = async (user, setUser) => {
-        console.log(user);
     try {
         let response;
         if (user) {
@@ -72,3 +72,27 @@ export const deleteUser = async (user, setUser) => {
 };
    
 
+//Movie Update
+export const updateMovie = async (e, watched, rating) => {
+    e.preventDefault();
+    try {
+        let response;
+        if (watched){ 
+            response = await fetch(`${process.env.REACT_APP_REST_API}movies`),{
+                method: 'PUT',
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify({
+                    watched: watched,
+                    ratings: rating
+                })
+
+            }
+            
+
+        }
+    const data = await response.json();
+    setMovie(data.movies.watched)    
+    } catch (error) {
+        console.log(error);
+    }
+};
