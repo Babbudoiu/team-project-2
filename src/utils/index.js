@@ -54,8 +54,7 @@ export const updateUserDetails = async (e,email, username, pass, user, setUser )
 };
 
 
-export const deleteUser = async (user) => {
-        console.log(user);
+export const deleteUser = async (user, setUser) => {
     try {
         let response;
         if (user) {
@@ -66,10 +65,11 @@ export const deleteUser = async (user) => {
             })
     }
     await response.json();
+    setUser()
     } catch (error) {
         console.log(error);
     }
-}
+};
    
 
 //Movie Update

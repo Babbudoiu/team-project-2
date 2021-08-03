@@ -41,8 +41,9 @@ export const Profile = ({ user, setUser}) => {
 
             <h2>Delete Account</h2>
             <button type="submit"onClick={() => {
-                deleteUser(user)
+                deleteUser(user,setUser)
             }}>Delete Account</button>
+            
            </PageContainer>
     )
 };
