@@ -7,9 +7,11 @@ export const MovieCard = ({moviesList}) => {
      <div>
      {moviesList
           .map((data) => {
-             return <MovieBox {...data}/>;
+               console.log(data);
+             return <MovieBox data={data}/>;
         })}
       </div>
+       
  );
 };
 

@@ -110,5 +110,7 @@ export const updateMovie = async (e, watched, rating, setMovie) => {
 }
 
 
+
+
     
 

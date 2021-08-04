@@ -14,6 +14,7 @@ import {
 const App = () => {
   const [user, setUser] = useState();
   const [movies, setMovies] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
 
   return (
     <AppContainer>
@@ -25,7 +26,7 @@ const App = () => {
         <Home movies={movies} setMovies={setMovies} />
       </Route>
       <Route path='/watchlist'>
-        <Watchlist />
+        <Watchlist watchlist={watchlist} setWatchlist={setWatchlist} />
       </Route>
       <Route path='/profile'>
         <Profile user={user} setUser={setUser} />
