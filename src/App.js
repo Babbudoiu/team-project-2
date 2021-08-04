@@ -8,7 +8,7 @@ import {
   import { Home } from './pages/home'
   import { Profile } from './pages/profile'
   import './style.css'
- 
+ import { Watchlist } from './pages/watchlist';
   
 
 const App = () => {
@@ -23,6 +23,9 @@ const App = () => {
       </Route>
       <Route path='/home'>
         <Home movies={movies} setMovies={setMovies} />
+      </Route>
+      <Route path='/watchlist'>
+        <Watchlist />
       </Route>
       <Route path='/profile'>
         <Profile user={user} setUser={setUser} />

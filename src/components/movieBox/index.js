@@ -11,6 +11,7 @@ export const MovieBox = ({title, actor, category, watched, rating}) => {
             <h5>Film Genre: {category}</h5>
             <h4>{watched}</h4>
             <h4>User Rating {rating}*</h4>
+            <button type="button">Add to Watchlist</button>
         </MovieContainer>
     )
 }
