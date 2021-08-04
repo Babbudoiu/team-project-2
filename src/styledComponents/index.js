@@ -18,3 +18,4 @@ export const MovieContainer = styled.div`
   text-align: center;
 `;
 
+

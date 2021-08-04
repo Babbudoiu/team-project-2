@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import { 
   BrowserRouter as Router,
   Route,
-  Redirect } from 'react-router-dom';
-  import styled from 'styled-components';
+  Redirect } from 'react-router-dom'
+  import styled from 'styled-components'
   import { Landing } from './pages/landing'
   import { Home } from './pages/home'
   import { Profile } from './pages/profile'
-  import { Movies } from './pages/movies';
+  import './style.css'
+ 
   
 
 const App = () => {
@@ -22,9 +23,6 @@ const App = () => {
       </Route>
       <Route path='/home'>
         <Home movies={movies} setMovies={setMovies} />
-      </Route>
-      <Route path='/movies'>
-        <Movies />
       </Route>
       <Route path='/profile'>
         <Profile user={user} setUser={setUser} />
