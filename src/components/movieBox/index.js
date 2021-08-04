@@ -1,17 +1,17 @@
-
 import React from 'react';
 import { MovieContainer } from '../../styledComponents';
+import { addToWatchlist } from '../../utils';
 
-export const MovieBox = ({title, actor, category, watched, rating}) => {
+export const MovieBox = ({data}) => {
 
     return (
         <MovieContainer className="movies">
-            <h3>{title}</h3>
-            <h5>Lead Actors: {actor}</h5>
-            <h5>Film Genre: {category}</h5>
-            <h4>{watched}</h4>
-            <h4>User Rating {rating}*</h4>
-            <button type="button">Add to Watchlist</button>
+            <h3>{data.title}</h3>
+            <h5>Lead Actors: {data.actor}</h5>
+            <h5>Film Genre: {data.category}</h5>
+            <h4>{data.watched}</h4>
+            <h4>User Rating {data.rating}*</h4>
+            <button type="button" onClick>Add to Watchlist</button>
         </MovieContainer>
     )
 }
