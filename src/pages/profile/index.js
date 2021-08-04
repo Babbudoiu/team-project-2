@@ -12,24 +12,24 @@ export const Profile = ({ user, setUser}) => {
     return (
         <PageContainer>
             <Navbar />
-            <h1>User settings</h1>
-            <p>Please enter new username, email or password but all entries MUST be filled</p>
+            <h1 className="navText">User settings</h1>
+            <p className="navText">Please enter new username, email or password but all entries MUST be filled</p>
             <form onSubmit={(e) => updateUserDetails(e, email, username, pass, user, setUser)}>
-            <label>
+            <label className="navText">
             Change username:
             <input 
             type="text" 
             name="name"
             onChange={(e) =>setUsername(e.target.value)} placeholder='New Username' />
             </label>
-            <label>
+            <label className="navText">
             Change email:
             <input 
             type="text" 
             name="name"
             onChange={(e) =>setEmail(e.target.value)} placeholder='New Email' />
             </label>
-            <label>
+            <label className="navText">
             Change password:
             <input 
             type="text" 
@@ -39,7 +39,7 @@ export const Profile = ({ user, setUser}) => {
             <button type="submit" >Update</button>
             </form>
 
-            <h2>Delete Account</h2>
+            <h2 className="navText">Delete Account</h2>
             <button type="submit"onClick={() => {
                 deleteUser(user,setUser)
             }}>Delete Account</button>
