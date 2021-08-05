@@ -9,6 +9,12 @@ export const Profile = ({ user, setUser}) => {
     const [username, setUsername] = useState();
     const [pass,setPass] = useState();
 
+    const logoutHandler = (e) => {
+        e.preventDefault();
+        localStorage.removeItem("MyToken");
+        setUser();
+    }
+
     return (
         <PageContainer>
             <Navbar />
@@ -38,6 +44,9 @@ export const Profile = ({ user, setUser}) => {
             </label>
             <button type="submit" >Update</button>
             </form>
+
+            <h2 className="navText">Log Out</h2>
+            <button type="submit" onClick={logoutHandler}>Log Out</button>
 
             <h2 className="navText">Delete Account</h2>
             <button type="submit"onClick={() => {

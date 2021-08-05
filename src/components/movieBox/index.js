@@ -1,6 +1,6 @@
 import React from 'react';
 import { MovieContainer } from '../../styledComponents';
-import { addToWatchlist } from '../../utils';
+// import { addToWatchlist } from '../../utils';
 
 export const MovieBox = ({data}) => {
 
@@ -11,7 +11,9 @@ export const MovieBox = ({data}) => {
             <h5>Film Genre: {data.category}</h5>
             <h4>{data.watched}</h4>
             <h4>User Rating {data.rating}*</h4>
-            <button type="button" onClick>Add to Watchlist</button>
+            <button type="button" onClick={() => {
+                data.inWatchlist = true
+            }}>Add to Watchlist</button>
         </MovieContainer>
     )
 }

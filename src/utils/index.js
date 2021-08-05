@@ -22,7 +22,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
             })
         }
         const data = await response.json();
-        console.log(data.user)
+        localStorage.setItem("MyToken", data.token)
         setUser(data.user.username)
     } catch (error) {
         console.log(error)
@@ -71,6 +71,22 @@ export const deleteUser = async (user, setUser) => {
         console.log(error);
     }
 };
+
+export const authUser = async (setUser) => {
+
+    if(localStorage.MyToken){
+        try {
+            const response = await fetch(`${process.env.REACT_APP_REST_API}users`, {
+                method: 'GET',
+                headers: {"Authorization": `Bearer ${localStorage.getItem("MyToken")}`}
+            })
+            const data = await response.json();
+            setUser(data.username)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+};
    
 
 
@@ -108,6 +124,46 @@ export const updateMovie = async (e, watched, rating, setMovie) => {
         console.log(error);
     };
 }
+
+// add movie
+// export const addToWatchlist = async ( movie, data, setWatchlist) => {
+
+//     try {
+//         let response;
+//         if(movie){
+//             response = await fetch(`${process.env.REACT_APP_REST_API}movies`,{
+//                 method: "POST",
+//                 header: {"Content-Type" : "application/json"},
+//                 body: JSON.stringify({
+//                     title: data.title,
+//                     actor: data.actor,
+//                     category: data.category,
+//                     rating: data.rating
+//                 })
+//             })
+//         }
+//         const watchlistData = await response.json();
+//         console.log(watchlistData);
+//         setWatchlist(watchlistData.movies.movie)
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+export const watchlistMovies = async (setMovies) => {
+    let response;
+       try {
+          response = await fetch(`${process.env.REACT_APP_REST_API}moviesAll`)
+       const data = await response.json();
+       if (data.inWatchlist !== false) {
+           setMovies(data)
+       } else{
+            setMovies()
+       }
+       } catch (error) {
+           console.log(error);
+       }
+   };
 
 
 

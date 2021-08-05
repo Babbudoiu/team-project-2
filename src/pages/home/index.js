@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { PageContainer } from "../../styledComponents";
+import { PageContainer, MovBox } from "../../styledComponents";
 import Navbar from '../../components/navbar';
 import styled from 'styled-components';
 import { findAllMovies } from '../../utils';
@@ -26,7 +26,3 @@ export const Home = ({movies, setMovies}) => {
     )
 }
 
-const MovBox = styled.div`
-    justify-content: center;
-    margin: auto;
-`

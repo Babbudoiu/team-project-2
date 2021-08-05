@@ -8,13 +8,19 @@ import {
   import { Home } from './pages/home'
   import { Profile } from './pages/profile'
   import './style.css'
- import { Watchlist } from './pages/watchlist';
+  import { Watchlist } from './pages/watchlist';
+  import { authUser } from './utils';
   
 
 const App = () => {
   const [user, setUser] = useState();
+
+  useEffect(() => {
+    authUser(setUser)
+  }, [user]);
+
   const [movies, setMovies] = useState([]);
-  const [watchlist, setWatchlist] = useState([]);
+ 
 
   return (
     <AppContainer>
@@ -26,7 +32,7 @@ const App = () => {
         <Home movies={movies} setMovies={setMovies} />
       </Route>
       <Route path='/watchlist'>
-        <Watchlist watchlist={watchlist} setWatchlist={setWatchlist} />
+        <Watchlist  movies={movies} setMovies={setMovies} />
       </Route>
       <Route path='/profile'>
         <Profile user={user} setUser={setUser} />
