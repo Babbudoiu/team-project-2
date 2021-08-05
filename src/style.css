@@ -1,3 +1,105 @@
-.navText{
-    color: white;
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
 }
+
+body {
+    background: #0E1C36;
+}
+/* every page container */
+.pageContainer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+/* login page */
+.logInput {
+    width: 20vw;
+    color: grey;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.5em 0;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+.logBtn {
+    width: 20vw;
+    color: grey;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 0;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+.logForm {
+    width: 35vw;
+    align-content: center;
+    margin: auto;
+}
+
+/* login page end */
+/* home page */
+
+.header {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+}
+
+.header h2 {
+    font-size: 70px;
+}
+
+.header h4 {
+    font-size: 40px;
+}
+
+.movieContainer {
+    background: #152a52;
+    margin: 10px auto;
+    padding: 0.25em 1em;
+    border: 2px solid #404267;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+.movieContainer h3 {
+    font-size: 30px;
+}
+
+.movieContainer h4 {
+    font-size: 20px;
+}
+
+.movieContainer img {
+    max-width: 150px;
+    max-height: 200px;
+    margin: 0 auto;
+}
+
+.movieContainer button {
+    width: 30%;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.movBox h2 {
+    font-size: 40px;
+}
+
+.react-player {
+    margin: 0 auto;
+    padding: 7px;
+}
+/* home page END */

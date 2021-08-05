@@ -61,7 +61,7 @@ export const deleteUser = async (user, setUser) => {
         if (user) {
             response = await fetch(`${process.env.REACT_APP_REST_API}users/${user}`, {
                 method: 'DELETE',
-                headers: {'Content-Type': 'application/json'},
+                headers: {"Authorization": `Bearer ${localStorage.removeItem("MyToken")}`},
                 username: user,
             })
     }
