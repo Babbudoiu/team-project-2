@@ -103,3 +103,8 @@ body {
     padding: 7px;
 }
 /* home page END */
+
+.navlink {
+    color: white;
+    text-decoration: none;
+}
