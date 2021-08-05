@@ -18,4 +18,7 @@ export const MovieContainer = styled.div`
   text-align: center;
 `;
 
-
+export const MovBox = styled.div`
+    justify-content: center;
+    margin: auto;
+`
