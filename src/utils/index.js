@@ -123,8 +123,8 @@ export const addMovie = async (e, title, actor, category, rating, setMovie) => {
                     title: title,
                     actor: actor,
                     category: category,
-                    rating: rating,
                     watched: false,
+                    rating: rating,
                 })
             })
         } 
