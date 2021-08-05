@@ -37,6 +37,12 @@ const Header = styled.div`
 
 const LogInput = styled.input`
     width: 20vw;
+    color: grey;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.50em 0;
+    border: 2px solid grey;
+    border-radius: 3px;
 `
 
 const LogForm = styled.form`
@@ -47,4 +53,10 @@ const LogForm = styled.form`
 
 const LogButton = styled.button`
     width: 20vw;
+    color: grey;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid grey;
+    border-radius: 3px;
 `

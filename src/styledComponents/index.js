@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PageContainer = styled.div`
 width: 100vw;
-height: 85vh;
+height: 100vh;
 background: black;
 text-align: center;
 `;
