@@ -12,12 +12,12 @@ export const MovieBox = ({data}) => {
 
     return (
         <div className="movieContainer">
-            <img src = {data.img} alt=""></img>
-            <ReactPlayer
+            {!data.inWatchlist && <img src = {data.img} alt=""></img>}
+            {data.inWatchlist && <ReactPlayer 
             className="react-player"
             url={`https://www.youtube.com/watch?${data.trailer}`}
-            height="350px"
-            width="500px"/>
+            height='300px'
+            width='400px'/>}
             <h3>{data.title}</h3>
             <h4>Lead Actors: {data.actor}</h4>
             <h4>Film Genre: {data.category}</h4>
