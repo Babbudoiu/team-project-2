@@ -10,6 +10,7 @@ export const MovieBox = ({data}) => {
     buttonText = "Remove from watchlist"
 } 
 
+
     return (
         <div className="movieContainer">
             {!data.inWatchlist && <img src = {data.img} alt=""></img>}
@@ -22,7 +23,7 @@ export const MovieBox = ({data}) => {
             <h4>Lead Actors: {data.actor}</h4>
             <h4>Film Genre: {data.category}</h4>
             <h4>{data.watched}</h4>
-            <h4>User Rating {data.rating}*</h4>
+            <h4>User Rating {5}</h4>
             <button
             className="logBtn" 
             type="button" 
