@@ -107,4 +107,13 @@ body {
 .navlink {
     color: white;
     text-decoration: none;
+    font-size: 30px;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.navlink:hover {
+    color: orange;
+    transition:  0.7s ease-in-out;
+    font-size: 25px;
 }

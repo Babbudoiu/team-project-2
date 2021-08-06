@@ -103,7 +103,7 @@ export const findAllMovies = async (setMovies) => {
 };
 
 
-export const setMovieWatchlist = async (e, movie, inWatchlist, setMovie) => {
+export const setMovieWatchlist = async (e, movie, inWatchlist) => {
     e.preventDefault();
     try {
         let response;
@@ -121,13 +121,11 @@ export const setMovieWatchlist = async (e, movie, inWatchlist, setMovie) => {
                     category: movie.category,
                     actor: movie.actor,
                     id: movie._id
-                
                 })
             })
 
         }
-    await response.json();
-    setMovie()    
+    await response.json(); 
     } catch (error) {
         console.log(error);
     };

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactPlayer from "react-player";
 import { setMovieWatchlist } from '../../utils';
-// import { isInWatchlist } from '../../pages/watchlist';
 
 export const MovieBox = ({data}) => {
 
-    const setMovie = () => {
-        
-    }
+   let buttonText = "Add to watchlist"
+   if(data.inWatchlist === true) {
+    buttonText = "Remove from watchlist"
+}
 
     return (
         <div className="movieContainer">
@@ -23,8 +23,8 @@ export const MovieBox = ({data}) => {
             <h4>{data.watched}</h4>
             <h4>User Rating {data.rating}*</h4>
             <button type="button" onClick={(e) => {
-                setMovieWatchlist(e,data, !data.inWathclist,setMovie)
-            }}>Add to Watchlist</button>
+                setMovieWatchlist(e,data, !data.inWathclist)
+            }}>{buttonText}</button>
         </div>
     )
 }
