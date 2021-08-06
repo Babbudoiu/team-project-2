@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/navbar'
 import { MovieCard } from '../../components/movieCard'
 
+import { deleteMovie } from '../../utils';
+
+
    
 export const Watchlist =  ({movies}) => {
     const [moArray, setMoArray] = useState([]);
@@ -13,6 +16,7 @@ export const Watchlist =  ({movies}) => {
 
     
     let watchlistText = "Your Watchlist";
+
 
      return (
         <div className="pageContainer">
