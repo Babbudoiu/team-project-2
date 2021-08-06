@@ -123,7 +123,6 @@ export const setMovieWatchlist = async ( movie ) => {
                 })
             })
 
-        console.log(response);
      await response.json();
     } catch (error) {
         console.log(error);
@@ -156,6 +155,26 @@ export const addMovie = async (e, title, actor, category, rating, setMovie) => {
         console.log(error)
     }
 };
+
+// delete movie 
+
+export const deleteMovie = async (movie, title) => {
+    try {
+        let response;
+        
+        if (movie) {
+            response = await fetch(`${process.env.REACT_APP_REST_API}movies/${title}`, {
+                method:'DELETE',
+                headers:{'content-Type' : 'application/json'},
+                title: movie.title
+            })
+        }
+        await response.json();
+    
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
     
