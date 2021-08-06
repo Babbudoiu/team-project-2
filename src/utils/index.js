@@ -102,70 +102,36 @@ export const findAllMovies = async (setMovies) => {
     }
 };
 
-//Movie Update
-export const updateMovie = async (e, watched, rating, setMovie) => {
+
+export const setMovieWatchlist = async (e, movie, inWatchlist, setMovie) => {
     e.preventDefault();
     try {
         let response;
-        if (watched){ 
+        if (inWatchlist){ 
             response = await fetch(`${process.env.REACT_APP_REST_API}movies`,{
                 method: 'PUT',
                 headers: {'Content-Type' : 'application/json'},
                 body: JSON.stringify({
-                    watched: watched,
-                    ratings: rating
+                    inWatchlist: !movie.inWatchlist,
+                    title: movie.title,
+                    watched: movie.watched,
+                    rating: movie.rating,
+                    img: movie.img,
+                    trailer: movie.trailer,
+                    category: movie.category,
+                    actor: movie.actor,
+                    id: movie._id
+                
                 })
             })
 
         }
-    const data = await response.json();
-    setMovie(data.movies.watched)    
+    await response.json();
+    setMovie()    
     } catch (error) {
         console.log(error);
     };
 }
-
-// add movie
-// export const addToWatchlist = async ( movie, data, setWatchlist) => {
-
-//     try {
-//         let response;
-//         if(movie){
-//             response = await fetch(`${process.env.REACT_APP_REST_API}movies`,{
-//                 method: "POST",
-//                 header: {"Content-Type" : "application/json"},
-//                 body: JSON.stringify({
-//                     title: data.title,
-//                     actor: data.actor,
-//                     category: data.category,
-//                     rating: data.rating
-//                 })
-//             })
-//         }
-//         const watchlistData = await response.json();
-//         console.log(watchlistData);
-//         setWatchlist(watchlistData.movies.movie)
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-export const watchlistMovies = async (setMovies) => {
-    let response;
-       try {
-          response = await fetch(`${process.env.REACT_APP_REST_API}moviesAll`)
-       const data = await response.json();
-       if (data.inWatchlist !== false) {
-           setMovies(data)
-       } else{
-            setMovies()
-       }
-       } catch (error) {
-           console.log(error);
-       }
-   };
-
-
 
 
     

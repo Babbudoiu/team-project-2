@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactPlayer from "react-player";
+import { setMovieWatchlist } from '../../utils';
 // import { isInWatchlist } from '../../pages/watchlist';
 
 export const MovieBox = ({data}) => {
+
+    const setMovie = () => {
+        
+    }
 
     return (
         <div className="movieContainer">
@@ -17,8 +22,8 @@ export const MovieBox = ({data}) => {
             <h4>Film Genre: {data.category}</h4>
             <h4>{data.watched}</h4>
             <h4>User Rating {data.rating}*</h4>
-            <button type="button" onClick={() => {
-                data.inWachtlist = true
+            <button type="button" onClick={(e) => {
+                setMovieWatchlist(e,data, !data.inWathclist,setMovie)
             }}>Add to Watchlist</button>
         </div>
     )

@@ -20,6 +20,7 @@ export const Home = ({movies, setMovies}) => {
             <MovieCard moviesList={movies}/>
             {/* </Carousel> */}
             </div>
+
         </div>
     )
 }

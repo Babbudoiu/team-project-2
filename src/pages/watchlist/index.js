@@ -1,32 +1,20 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import Navbar from '../../components/navbar'
-import { watchlistMovies } from '../../utils'
+// import { watchlistMovies } from '../../utils'
 import { MovieCard } from '../../components/movieCard'
 
-// export const isInWatchlist = () => {
-//     if (isInWatchlist === false) {
-//        <MovieCard style={{display: "none"}} />
-//     } else {
-//         <MovieCard style={{display: "block"}} />
-//     }
-//   }
-
-export const Watchlist =  ({movies, setMovies}) => {
-
-    useEffect(() => {
-        
-        watchlistMovies(setMovies);
-      }, []);
+   
+export const Watchlist =  ({movies}) => {
     
-      
+    let movieArray = movies.filter(movie => movie.inWatchlist === true)
+     
     return (
         <div className="pageContainer">
             <Navbar />
             <div className="movBox">
-            <MovieCard moviesList={movies}/>
+            <MovieCard moviesList={movieArray}/>
             </div>
         </div>
-        
     )
 };
 
