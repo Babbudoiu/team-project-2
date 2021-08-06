@@ -22,8 +22,8 @@ export const MovieBox = ({data}) => {
             <h4>Film Genre: {data.category}</h4>
             <h4>{data.watched}</h4>
             <h4>User Rating {data.rating}*</h4>
-            <button type="button" onClick={(e) => {
-                setMovieWatchlist(e,data, !data.inWathclist)
+            <button type="button" onClick={() => {
+                setMovieWatchlist(data, !data.inWatchlist)
             }}>{buttonText}</button>
         </div>
     )
