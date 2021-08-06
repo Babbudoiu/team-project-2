@@ -10,7 +10,6 @@ export const Watchlist =  ({movies}) => {
         setMovieWatchlist()
     }, [movies])
 
-    
     let movieArray = movies.filter(movie => movie.inWatchlist === true);
 
     let watchlistText = "Your Watchlist";

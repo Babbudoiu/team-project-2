@@ -103,8 +103,8 @@ export const findAllMovies = async (setMovies) => {
 };
 
 
-export const setMovieWatchlist = async (e, movie, inWatchlist) => {
-    e.preventDefault();
+export const setMovieWatchlist = async ( movie, inWatchlist) => {
+   
     try {
         let response;
         if (inWatchlist){ 
