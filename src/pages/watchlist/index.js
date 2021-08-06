@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/navbar'
 import { MovieCard } from '../../components/movieCard'
 import { setMovieWatchlist } from '../../utils';
 
    
 export const Watchlist =  ({movies}) => {
+    const [moArray, setMoArray] = useState([]);
 
-    let movieArray = movies.filter(movie => movie.inWatchlist === true);
+    useEffect(()=> {
+        let movieArray = movies.filter(movie => movie.inWatchlist === true);
+        setMoArray(movieArray)
+    }, [ movies])
 
+    
     let watchlistText = "Your Watchlist";
 
      return (
@@ -15,7 +20,7 @@ export const Watchlist =  ({movies}) => {
             <Navbar />
             <div className="movBox">
                 <h2>{watchlistText}</h2>
-            <MovieCard moviesList={movieArray}/>
+            <MovieCard moviesList={moArray}/>
             </div>
         </div>
     )

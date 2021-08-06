@@ -8,7 +8,7 @@ export const Home = ({movies, setMovies}) => {
 
   useEffect(() => {
     findAllMovies(setMovies);
-  }, []);
+  }, [movies]);
 
     return (
         <div className="pageContainer">

@@ -5,9 +5,9 @@ export const MovieCard = ({moviesList}) => {
 
 return (
      <div>
-     {moviesList.map((data) => {
+     {moviesList.map((data, index) => {
 
-          return <MovieBox data={data} />; 
+          return <MovieBox key={index} data={data} />; 
      })}
       </div>
        

@@ -103,12 +103,11 @@ export const findAllMovies = async (setMovies) => {
 };
 
 
-export const setMovieWatchlist = async ( movie, inWatchlist) => {
+export const setMovieWatchlist = async ( movie ) => {
    
     try {
-        let response;
-        if (inWatchlist){ 
-            response = await fetch(`${process.env.REACT_APP_REST_API}movies`,{
+        let response
+                response = await fetch(`${process.env.REACT_APP_REST_API}movies`,{
                 method: 'PUT',
                 headers: {'Content-Type' : 'application/json'},
                 body: JSON.stringify({
@@ -124,7 +123,7 @@ export const setMovieWatchlist = async ( movie, inWatchlist) => {
                 })
             })
 
-        }
+        console.log(response);
      await response.json();
     } catch (error) {
         console.log(error);
