@@ -1,15 +1,14 @@
 import { MovieBox } from '../movieBox';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export const MovieCard = ({moviesList}) => {
 
- return (
+return (
      <div>
-     {moviesList
-          .map((data) => {
-               console.log(data);
-             return <MovieBox data={data}/>;
-        })}
+     {moviesList.map((data) => {
+
+          return <MovieBox data={data} />; 
+     })}
       </div>
        
  );
