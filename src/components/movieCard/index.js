@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 export const MovieCard = ({moviesList}) => {
 
 return (
-     <div>
+     <div className='grid'>
      {moviesList.map((data, index) => {
 
           return <MovieBox key={index} data={data} />; 

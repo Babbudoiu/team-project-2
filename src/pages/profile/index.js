@@ -17,7 +17,7 @@ export const Profile = ({ user, setUser}) => {
     return (
         <div className="pageContainer">
             <Navbar />
-            <h1 className="navText">User settings</h1>
+            <h1 className="header">User settings</h1>
             <p className="navText">Please enter new username, email or password but all entries MUST be filled</p>
             <form className="logForm" onSubmit={(e) => updateUserDetails(e, email, username, pass, user, setUser)}>
             <h3>Change Username</h3>
