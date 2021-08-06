@@ -130,7 +130,7 @@ export const setMovieWatchlist = async ( movie, inWatchlist) => {
         console.log(error);
     };
 }
-// ---------------------------------------------------------------
+
 
 // add movie
 export const addMovie = async (e, title, actor, category, rating, setMovie) => {

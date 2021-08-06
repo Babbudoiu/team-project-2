@@ -6,10 +6,6 @@ import { setMovieWatchlist } from '../../utils';
    
 export const Watchlist =  ({movies}) => {
 
-    useEffect(() => {
-        setMovieWatchlist()
-    }, [movies])
-
     let movieArray = movies.filter(movie => movie.inWatchlist === true);
 
     let watchlistText = "Your Watchlist";
