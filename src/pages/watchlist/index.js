@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/navbar'
 import { MovieCard } from '../../components/movieCard'
-import { setMovieWatchlist } from '../../utils';
 
    
 export const Watchlist =  ({movies}) => {
@@ -19,7 +18,7 @@ export const Watchlist =  ({movies}) => {
         <div className="pageContainer">
             <Navbar />
             <div className="movBox">
-                <h2>{watchlistText}</h2>
+            <h2>{watchlistText}</h2>
             <MovieCard moviesList={moArray}/>
             </div>
         </div>

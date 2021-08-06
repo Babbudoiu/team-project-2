@@ -20,5 +20,5 @@ export const Home = ({movies, setMovies}) => {
 
         </div>
     )
-}
+};
 
