@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../../components/navbar'
 import { MovieCard } from '../../components/movieCard'
+import { setMovieWatchlist } from '../../utils';
 
    
 export const Watchlist =  ({movies}) => {
+
+    useEffect(() => {
+        setMovieWatchlist()
+    }, [movies])
+
     
     let movieArray = movies.filter(movie => movie.inWatchlist === true);
 

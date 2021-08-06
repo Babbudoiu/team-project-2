@@ -125,7 +125,7 @@ export const setMovieWatchlist = async (e, movie, inWatchlist) => {
             })
 
         }
-    await response.json(); 
+     await response.json();
     } catch (error) {
         console.log(error);
     };

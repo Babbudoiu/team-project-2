@@ -14,6 +14,7 @@ import {
 const App = () => {
   const [user, setUser] = useState();
   const [movies, setMovies] = useState([]);
+  // const [watchlist, setWatchlist] = useState([]);
 
   useEffect(() => {
     authUser(setUser)
@@ -30,7 +31,7 @@ const App = () => {
         <Home movies={movies} setMovies={setMovies} />
       </Route>
       <Route path='/watchlist'>
-        <Watchlist  movies={movies} setMovies={setMovies}/>
+        <Watchlist  movies={movies} setMovies={setMovies} />
       </Route>
       <Route path='/profile'>
         <Profile user={user} setUser={setUser} />
