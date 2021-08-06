@@ -130,6 +130,33 @@ export const setMovieWatchlist = async (e, movie, inWatchlist) => {
         console.log(error);
     };
 }
+// ---------------------------------------------------------------
+
+// add movie
+export const addMovie = async (e, title, actor, category, rating, setMovie) => {
+    e.preventDefault();
+    try {
+        let response;
+        if (title) {
+            response = await fetch(`${process.env.REACT_APP_REST_API}movies`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    title: title,
+                    actor: actor,
+                    category: category,
+                    watched: false,
+                    rating: rating,
+                })
+            })
+        } 
+        const data = await response.json();
+        console.log(data.movies)
+        setMovie(data.movies.title)
+    } catch (error) {
+        console.log(error)
+    }
+};
 
 
     
